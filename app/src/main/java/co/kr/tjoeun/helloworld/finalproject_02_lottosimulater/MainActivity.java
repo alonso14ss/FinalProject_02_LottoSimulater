@@ -36,6 +36,8 @@ public class MainActivity extends BaseActivity {
     int fifthRankCount = 0;
     int noRankCount = 0;
 
+    boolean isAutoLottoRunning = false;
+
 
     ActivityMainBinding binding = null;
 
@@ -59,6 +61,15 @@ public class MainActivity extends BaseActivity {
 
     void buyLottoLoop(){
         mHandler.post(buyLottoRunnable);
+        isAutoLottoRunning = true;
+//        버튼 문구 변경
+        binding.buyAutoLottoBtn.setText("자동 구매 중단");
+    }
+
+    void stopBuyingLotto(){
+        mHandler.removeCallbacks(buyLottoRunnable);
+        isAutoLottoRunning = false;
+        binding.buyAutoLottoBtn.setText("자동 구매 재개");
     }
 
 
@@ -77,10 +88,13 @@ public class MainActivity extends BaseActivity {
         binding.buyAutoLottoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!isAutoLottoRunning){
 
-//                사용금액의 총액이 1천만원이 될때까지 반복
-
-                buyLottoLoop();
+                    buyLottoLoop();
+                }
+                else {
+                    stopBuyingLotto();
+                }
             }
         });
 
