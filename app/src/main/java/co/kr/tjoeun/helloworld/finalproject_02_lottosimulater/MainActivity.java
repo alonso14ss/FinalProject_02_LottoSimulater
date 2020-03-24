@@ -22,6 +22,8 @@ public class MainActivity extends BaseActivity {
     int[] winLottoNumArr = new int[6];
     int bonusNum = 0;
 
+    int[] myLottoNumArr = {4, 14, 20, 26, 33, 45};
+
     long userMoneyAmount = 0;
 
     ActivityMainBinding binding = null;
@@ -127,7 +129,7 @@ public class MainActivity extends BaseActivity {
             int randomNum = (int) (Math.random() * 45 + 1);
 
             boolean isDuplOk = true;
-            for ( int winNum :winLottoNumArr) {
+            for (int winNum : winLottoNumArr) {
                 if (winNum == randomNum) {
                     isDuplOk = false;
                     break;
@@ -140,7 +142,7 @@ public class MainActivity extends BaseActivity {
 
         }
 
-        binding.bonusNumTxt.setText(bonusNum+"");
+        binding.bonusNumTxt.setText(bonusNum + "");
 
     }
 
@@ -148,7 +150,33 @@ public class MainActivity extends BaseActivity {
 //        등수 확인 + 돈을 천원 지불
         userMoneyAmount += 1000;
 
-        binding.useMoneyTxt.setText(String.format("사용금액 : %d원",userMoneyAmount));
+        binding.useMoneyTxt.setText(String.format("사용금액 : %d원", userMoneyAmount));
 
+//        몇등인지?
+//        내 번호를 하나 들고 => 당첨번호 6개를 돌아봄
+//        몇개의 숫자를 맞췄는지
+
+        int correctCount = 0;
+        for (int myNum : myLottoNumArr) {
+            for (int winNum : winLottoNumArr) {
+
+                if (myNum == winNum) {
+                    correctCount++;
+                }
+            }
+        }
+
+//        correctCount 의 값에따라 등수를 판정
+        if (correctCount == 6) {
+
+        } else if (correctCount == 5) {
+//            2등인지 3등인지 재검사 필요= > 보너스 번호를 맞췄는가
+        } else if (correctCount == 4) {
+
+        } else if (correctCount ==3) {
+
+        }else {
+
+        }
     }
 }
