@@ -97,9 +97,9 @@ public class MainActivity extends BaseActivity {
                     }
                 }
 
-                if (isDuplOk){
+                if (isDuplOk) {
                     winLottoNumArr[i] = randomNum;
-                    Log.i("당첨번호", randomNum+"");
+                    Log.i("당첨번호", randomNum + "");
                     break;
                 }
 
@@ -110,10 +110,31 @@ public class MainActivity extends BaseActivity {
 //        6개의 당첨번호를 작은 숫자부터 정렬
         Arrays.sort(winLottoNumArr);
 
-        for (int i=0; i< winLottoNumArr.length; i++){
+        for (int i = 0; i < winLottoNumArr.length; i++) {
 
-            winNumTxtList.get(i).setText(winLottoNumArr[i]+"");
+            winNumTxtList.get(i).setText(winLottoNumArr[i] + "");
 
         }
+
+//        1~45 보너스번호, 당첨번호 중복 x
+        while (true) {
+            int randomNum = (int) (Math.random() * 45 + 1);
+
+            boolean isDuplOk = true;
+            for ( int winNum :winLottoNumArr) {
+                if (winNum == randomNum) {
+                    isDuplOk = false;
+                    break;
+                }
+            }
+            if (isDuplOk) {
+                bonusNum = randomNum;
+                break;
+            }
+
+        }
+
+        binding.bonusNumTxt.setText(bonusNum+"");
+
     }
 }
