@@ -149,6 +149,12 @@
             android:layout_height="wrap_content"
             android:text="로또 한장 구매하기"/>
 
+        <Button
+            android:id="@+id/buyAutoLottoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로또 자동 구매하기"/>
+
         <TextView
             android:id="@+id/useMoneyTxt"
             android:layout_width="wrap_content"
@@ -171,7 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textSize="16sp"
-            android:text="1등 : 0 회"/>
+            android:text="1등"/>
 
         <TextView
             android:id="@+id/secondRankCountTxt"
@@ -179,7 +185,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textSize="16sp"
-            android:text="2드"/>
+            android:text="2등"/>
 
         <TextView
             android:id="@+id/thirdRankCountTxt"
