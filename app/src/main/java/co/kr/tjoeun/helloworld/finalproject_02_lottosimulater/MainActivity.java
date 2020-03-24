@@ -22,6 +22,8 @@ public class MainActivity extends BaseActivity {
     int[] winLottoNumArr = new int[6];
     int bonusNum = 0;
 
+    long userMoneyAmount = 0;
+
     ActivityMainBinding binding = null;
 
     @Override
@@ -30,6 +32,7 @@ public class MainActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         setupEvents();
         setValues();
+
     }
 
     @Override
@@ -42,6 +45,9 @@ public class MainActivity extends BaseActivity {
                 makeWinLottoNum();
 
 //                당첨 번호를 생성 => 텍스트 뷰에 반영
+
+//                몇등인지 판단
+                checkLottoRank();
 
             }
         });
@@ -135,6 +141,14 @@ public class MainActivity extends BaseActivity {
         }
 
         binding.bonusNumTxt.setText(bonusNum+"");
+
+    }
+
+    void checkLottoRank() {
+//        등수 확인 + 돈을 천원 지불
+        userMoneyAmount += 1000;
+
+        binding.useMoneyTxt.setText(String.format("사용금액 : %d원",userMoneyAmount));
 
     }
 }
