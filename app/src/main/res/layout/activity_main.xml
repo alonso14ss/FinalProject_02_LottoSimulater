@@ -165,6 +165,54 @@
             android:textSize="16sp"
             android:text="당첨금액 : 0원"/>
 
+        <TextView
+            android:id="@+id/fisrtRankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="1등 : 0 회"/>
+
+        <TextView
+            android:id="@+id/secondRankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="2드"/>
+
+        <TextView
+            android:id="@+id/thirdRankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="3등"/>
+
+        <TextView
+            android:id="@+id/fourthRankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="4등"/>
+
+        <TextView
+            android:id="@+id/fifthRankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="5등"/>
+
+        <TextView
+            android:id="@+id/noRankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="낙첨"/>
+
 
     </LinearLayout>
 
